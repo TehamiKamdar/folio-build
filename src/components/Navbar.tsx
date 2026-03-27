@@ -1,0 +1,33 @@
+import { NAV_LINKS } from "../data/data";
+import { C } from "../styles/theme";
+
+export default function Navbar() {
+  return (
+    <nav style={{
+      position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+      display: "flex", alignItems: "center", justifyContent: "space-between",
+      padding: "0 40px", height: 60,
+      background: "rgba(7,7,8,0.75)", backdropFilter: "blur(20px)",
+      borderBottom: `1px solid ${C.border}`,
+    }}>
+      <div className="serif" style={{ fontSize: "1.25rem", letterSpacing: "-.02em" }}>
+        folio<span style={{ color: C.accent2 }}>.</span>build
+      </div>
+      <div style={{ display: "flex", gap: 32 }}>
+        {NAV_LINKS.map(l => (
+          <a key={l} href={`#${l.toLowerCase().replace(" ", "-")}`}
+            style={{ fontSize: ".82rem", color: C.muted2, textDecoration: "none", transition: "color .2s" }}
+            onMouseEnter={e => e.currentTarget.style.color = C.text}
+            onMouseLeave={e => e.currentTarget.style.color = C.muted2}>{l}</a>
+        ))}
+      </div>
+      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <button style={{ background: C.accent, color: "#fff", border: "none", padding: "8px 20px", borderRadius: 8, fontFamily: "'Geist',sans-serif", fontSize: ".82rem", fontWeight: 600, cursor: "pointer", transition: "all .2s" }}
+          onMouseEnter={e => { e.currentTarget.style.background = C.accent2; e.currentTarget.style.transform = "translateY(-1px)"; }}
+          onMouseLeave={e => { e.currentTarget.style.background = C.accent; e.currentTarget.style.transform = "translateY(0)"; }}>
+          Get started free →
+        </button>
+      </div>
+    </nav>
+  );
+}
