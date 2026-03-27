@@ -1,7 +1,9 @@
 import { NAV_LINKS } from "../data/data";
+import { useAuthAction } from "../hooks/useAuthAction";
 import { C } from "../styles/theme";
 
 export default function Navbar() {
+  const handleAuth = useAuthAction();
   return (
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
@@ -24,7 +26,8 @@ export default function Navbar() {
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <button style={{ background: C.accent, color: "#fff", border: "none", padding: "8px 20px", borderRadius: 8, fontFamily: "'Geist',sans-serif", fontSize: ".82rem", fontWeight: 600, cursor: "pointer", transition: "all .2s" }}
           onMouseEnter={e => { e.currentTarget.style.background = C.accent2; e.currentTarget.style.transform = "translateY(-1px)"; }}
-          onMouseLeave={e => { e.currentTarget.style.background = C.accent; e.currentTarget.style.transform = "translateY(0)"; }}>
+          onMouseLeave={e => { e.currentTarget.style.background = C.accent; e.currentTarget.style.transform = "translateY(0)"; }}
+          onClick={handleAuth}>
           Get started free →
         </button>
       </div>

@@ -2,9 +2,12 @@ import Eyebrow from "../components/Eyebrow";
 import { PLANS } from "../data/data";
 import { C } from "../styles/theme";
 import { useInView } from "../hooks/useInView";
+import { useAuthAction } from "../hooks/useAuthAction";
 
 export function Pricing() {
   const [pricingRef, pricingVisible] = useInView(0.1);
+  const handleAuth = useAuthAction();
+
   return (
     <section id="pricing" style={{ padding: "96px 40px", background: C.surface }}>
       <div style={{ maxWidth: 1000, margin: "0 auto" }}>
@@ -57,6 +60,7 @@ export function Pricing() {
                 }}
                 onMouseEnter={e => { if (p.highlight) { e.currentTarget.style.transform = "translateY(-1px)"; e.currentTarget.style.boxShadow = "0 6px 20px rgba(124,109,250,.3)"; } else { e.currentTarget.style.color = C.text; } }}
                 onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; if (!p.highlight) e.currentTarget.style.color = C.muted2; }}
+                onClick={handleAuth}
               >
                 {p.cta}
               </button>

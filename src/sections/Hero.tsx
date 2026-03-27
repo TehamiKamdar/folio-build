@@ -2,10 +2,12 @@ import Badge from "../components/Badge";
 import BrowserMockup from "../components/BrowserMockup";
 import { C } from "../styles/theme";
 import { useInView } from "../hooks/useInView";
+import { useAuthAction } from "../hooks/useAuthAction";
 
 export default function Hero() {
   const [heroRef, heroVisible] = useInView(0.05);
-
+  const handleAuth = useAuthAction();
+  
   return (
     <section style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "100px 40px 60px", textAlign: "center", position: "relative", overflow: "hidden" }}>
       {/* bg */}
@@ -31,7 +33,8 @@ export default function Hero() {
         <div className="fade-up d4" style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap", justifyContent: "center", marginBottom: 16, opacity: heroVisible ? undefined : 0 }}>
           <button style={{ background: `linear-gradient(135deg,${C.accent},${C.accent2})`, color: "#fff", border: "none", padding: "13px 28px", borderRadius: 10, fontFamily: "'Geist',sans-serif", fontSize: ".92rem", fontWeight: 600, cursor: "pointer", boxShadow: "0 4px 20px rgba(124,109,250,.25)", transition: "all .25s" }}
             onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(124,109,250,.4)"; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(124,109,250,.25)"; }}>
+            onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(124,109,250,.25)"; }}
+            onClick={handleAuth}>
             Build my portfolio — it's free
           </button>
         </div>
