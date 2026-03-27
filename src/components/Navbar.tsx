@@ -5,12 +5,7 @@ import { C } from "../styles/theme";
 export default function Navbar() {
   const handleAuth = useAuthAction();
   return (
-    <nav style={{
-      position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-      display: "flex", alignItems: "center", justifyContent: "space-between",
-      padding: "0 40px", height: 60,
-      background: "rgba(7,7,8,0.75)", backdropFilter: "blur(20px)",
-      borderBottom: `1px solid ${C.border}`,
+    <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 40px", height: 60, background: "rgba(7,7,8,0.75)", backdropFilter: "blur(20px)", borderBottom: `1px solid ${C.border}`,
     }}>
       <div className="serif" style={{ fontSize: "1.25rem", letterSpacing: "-.02em" }}>
         folio<span style={{ color: C.accent2 }}>.</span>build

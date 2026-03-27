@@ -2,11 +2,7 @@ import { C } from "../styles/theme";
 
 export default function BrowserMockup() {
   return (
-    <div style={{
-      marginTop: 56, width: "100%", maxWidth: 860,
-      borderRadius: 16, overflow: "hidden",
-      border: `1px solid ${C.border2}`,
-      boxShadow: `0 40px 100px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.04) inset`,
+    <div style={{ marginTop: 56, width: "100%", maxWidth: 860, borderRadius: 16, overflow: "hidden", border: `1px solid ${C.border2}`, boxShadow: `0 40px 100px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.04) inset`,
     }}>
       {/* bar */}
       <div style={{ background: "#1a1a1e", padding: "11px 16px", display: "flex", alignItems: "center", gap: 12, borderBottom: `1px solid ${C.border}` }}>
