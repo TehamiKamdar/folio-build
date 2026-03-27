@@ -19,10 +19,16 @@ export default function Navbar() {
         ))}
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-        <button style={{ background: C.accent, color: "#fff", border: "none", padding: "8px 20px", borderRadius: 8, fontFamily: "'Geist',sans-serif", fontSize: ".82rem", fontWeight: 600, cursor: "pointer", transition: "all .2s" }}
-          onMouseEnter={e => { e.currentTarget.style.background = C.accent2; e.currentTarget.style.transform = "translateY(-1px)"; }}
-          onMouseLeave={e => { e.currentTarget.style.background = C.accent; e.currentTarget.style.transform = "translateY(0)"; }}
-          onClick={handleAuth}>
+        <button
+          onClick={handleAuth}
+          className="block text-[.82rem] px-10 py-5 rounded-lg font-semibold transition-all duration-200 hover:-translate-y-[1px]"
+          style={{
+            background: C.accent,
+            color: "#fff",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.background = C.accent2)}
+          onMouseLeave={(e) => (e.currentTarget.style.background = C.accent)}
+        >
           Get started free →
         </button>
       </div>

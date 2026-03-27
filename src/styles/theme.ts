@@ -7,7 +7,6 @@ export const C = {
 
 export const globalStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&display=swap');
-  * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { background: ${C.bg}; color: ${C.text}; font-family: 'Geist', sans-serif; overflow-x: hidden; }
   ::-webkit-scrollbar { width: 4px; }
