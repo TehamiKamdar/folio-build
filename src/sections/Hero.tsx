@@ -34,11 +34,6 @@ export default function Hero() {
             onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "0 4px 20px rgba(124,109,250,.25)"; }}>
             Build my portfolio — it's free
           </button>
-          <button style={{ background: C.surface2, color: C.muted2, border: `1px solid ${C.border2}`, padding: "12px 24px", borderRadius: 10, fontFamily: "'Geist',sans-serif", fontSize: ".9rem", cursor: "pointer", transition: "all .2s" }}
-            onMouseEnter={e => e.currentTarget.style.color = C.text}
-            onMouseLeave={e => e.currentTarget.style.color = C.muted2}>
-            See a live demo ↗
-          </button>
         </div>
 
         <div className="fade-up d5" style={{ display: "flex", alignItems: "center", gap: 20, fontSize: ".75rem", color: C.muted, opacity: heroVisible ? undefined : 0 }}>
